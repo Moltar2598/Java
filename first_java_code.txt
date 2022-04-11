@@ -1,0 +1,67 @@
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class Main
+{
+	public static void main(String[] args) {
+    	/*Scanner scanner = new Scanner(System.in);
+    	int answer = scanner.nextInt();
+    	if(answer==4){	
+    		System.out.println("Hello World");
+    	    }
+    	Random random = new Random();
+    	answer = random.nextInt(20);
+    	System.out.println(answer);*/
+    	System.out.println("Welcome to the game.");
+    	System.out.print("Enter your name: ");
+    	Scanner scanner = new Scanner(System.in);
+    	Random random = new Random();
+    	String name = scanner.nextLine();
+    	System.out.println("Hello " + name);
+    	int guess;
+    	while(true){
+    	    System.out.print("Type your decision(y/n): ");
+    	    
+    	    char i = scanner.nextLine().charAt(0);
+    	    if(i == 'y'){
+    	        System.out.println("Start");
+    	        
+    	        int answer = random.nextInt(10);
+    	        
+    	        int confirmation = 1;
+    	        for(int y = 0;y<5;y++){
+    	            System.out.println("Guess a number from 0 to 10");
+    	            
+    	            guess = scanner.nextInt();
+    	            
+    	            if(answer>guess){
+    	                System.out.printf("%d is less then the number.%n",guess);
+    	            }
+    	            else if(answer<guess){
+    	                System.out.printf("%d is greater then the number.%n",guess);
+    	            }
+    	            else if(answer==guess){
+    	                System.out.println("Congrats you guessed the correct no.");
+    	                confirmation = 1;
+    	                break;
+    	            }
+    	        }
+    	        if(confirmation == 0){
+    	            System.out.println("Game Over.");
+    	            System.out.println(answer);
+    	            break;
+    	        }
+    	        break;
+    	    }
+        	else if(i == 'n'){
+    	        System.out.println("Exit");
+    	        break;
+    	    }
+    	    else{
+    	        System.out.println("Incorrect Input.");
+    	    }
+    	}
+	}
+	
+}
